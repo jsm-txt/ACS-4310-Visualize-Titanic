@@ -1,0 +1,91 @@
+legend{
+  
+}
+li{
+  display: inline-block;
+}
+#circle{
+  background-color: black;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+}
+#square{
+  background-color: black;
+  height: 24px;
+  width: 24px;
+}
+#red{
+  background-color: red;
+  height: 24px;
+  width: 24px;
+}
+
+#blue{
+  background-color: blue;
+  height: 24px;
+  width: 24px;
+}
+#green{
+  background-color: green;
+  height: 24px;
+  width: 24px;
+}
+#survivor{
+  background-color: black;
+  height: 24px;
+  width: 24px;
+  opacity: 15%;
+}
+#age1{
+  background-color: black;
+  height:6px;
+  width: 6px;
+}
+#age2{
+  background-color: black;
+  height: 9px;
+  width: 9px;
+}
+#age3{
+  background-color: black;
+  height: 12px;
+  width: 12px;
+}
+#age4{
+  background-color: black;
+  height: 15px;
+  width: 15px;
+}
+
+#fare1{
+  background-color: purple;
+  height: 24px;
+  width: 24px;
+}
+#fare2{
+  background-color: blue;
+  height: 24px;
+  width: 24px;
+}
+#fare3{
+  background-color: green;
+  height: 24px;
+  width: 24px;
+}
+#fare4{
+  background-color: yellow;
+  height: 24px;
+  width: 24px;
+}
+#fare5{
+  background-color: orange;
+  height: 24px;
+  width: 24px;
+}
+#fare6{
+  background-color: red;
+  height: 24px;
+  width: 24px;
+}
+
