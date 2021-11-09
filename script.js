@@ -57,20 +57,20 @@ passengers.forEach((p, i) => {
     p.style.height = '18px'
   }
   else if (data[i].fields.age < 10) {
-    p.style.width = '15px'
-    p.style.height = '15px'
+    p.style.width = '6px'
+    p.style.height = '6px'
   }
   else if (data[i].fields.age < 20) {
-    p.style.width = '12px'
-    p.style.height = '12px'
-  }
-  else if (data[i].fields.age < 30) {
     p.style.width = '9px'
     p.style.height = '9px'
   }
+  else if (data[i].fields.age < 30) {
+    p.style.width = '12px'
+    p.style.height = '12px'
+  }
   else if (data[i].fields.age < 40) {
-    p.style.width = '6px'
-    p.style.height = '6px'
+    p.style.width = '15px'
+    p.style.height = '15px'
   }
   else if (data[i].fields.age === undefined) {
     p.style.width = '18px'
@@ -111,7 +111,7 @@ const fare = document.querySelector('#fare')
 
 
 fare.style.display = 'grid'
-fare.style.gridTemplateColumns = 'repeat(34, 15px)'
+fare.style.gridTemplateColumns = 'repeat(34, 18px)'
 fare.style.gridGap = '1px'
 
 //const fareSort
@@ -127,8 +127,7 @@ const farePaid = fareSort.map(p => {
 
 farePaid.forEach((p, i) => {
   const { sex, survived} = data[i].fields
-  p.style.width = '15px'
-  p.style.height = '15px'
+  
   p.style.borderRadius = sex === 'female' ? '25px' : '0px'
   p.style.opacity = survived === 'Yes' ? '100%' : '20%'
   if (data[i].fields.fare >= 200) {
@@ -152,29 +151,55 @@ farePaid.forEach((p, i) => {
   else if (data[i].fields.fare === undefined) {
     p.style.backgroundColor = 'black'
   }
+  if (data[i].fields.age >= 40) {
+    p.style.width = '18px'
+    p.style.height = '18px'
+  }
+  else if (data[i].fields.age < 10) {
+    p.style.width = '6px'
+    p.style.height = '6px'
+  }
+  else if (data[i].fields.age < 20) {
+    p.style.width = '9px'
+    p.style.height = '9px'
+  }
+  else if (data[i].fields.age < 30) {
+    p.style.width = '12px'
+    p.style.height = '12px'
+  }
+  else if (data[i].fields.age < 40) {
+    p.style.width = '15px'
+    p.style.height = '15px'
+  }
+  else if (data[i].fields.age === undefined) {
+    p.style.width = '18px'
+    p.style.height = '18px'
+  }
 })
 
 
 const survived = document.querySelector('#survived')
 
 survived.style.display = 'grid'
-survived.style.gridTemplateColumns = 'repeat(34, 15px)'
+survived.style.gridTemplateColumns = 'repeat(34, 18px)'
 survived.style.gridGap = '1px'
 
 const survivedFilter = data.filter(p => p.fields.survived === 'Yes')
-console.log(survivedFilter)
-const survivedFilterMap = survivedFilter.map(p => {
+const survivedFilter2 = survivedFilter.filter(p => p.fields.sex=== 'female')
+const survivorSort = survivedFilter2.sort((a, b) => {
+  return a.fields.age - b.fields.age})
+
+const survivedFilterMap = survivorSort.map(p => {
   const el = document.createElement('div')
   survived.appendChild(el)
   return el
 })
-
+console.log(survivorSort)
 survivedFilterMap.forEach((p, i) => {
-  const {sex} = data[i].fields
-  p.style.width = '15px'
-  p.style.height = '15px'
+  const { sex, survived} = data[i].fields
+  
   p.style.borderRadius = sex === 'female' ? '25px' : '0px'
-  //p.style.opacity = survived === 'Yes' ? '100%' : '20%'
+  p.style.opacity = survived === 'Yes' ? '100%' : '20%'
   if (data[i].fields.fare >= 200) {
     p.style.backgroundColor = 'red'
   }
@@ -195,5 +220,29 @@ survivedFilterMap.forEach((p, i) => {
   }
   else if (data[i].fields.fare === undefined) {
     p.style.backgroundColor = 'black'
+  }
+  if (data[i].fields.age >= 40) {
+    p.style.width = '18px'
+    p.style.height = '18px'
+  }
+  else if (data[i].fields.age < 10) {
+    p.style.width = '6px'
+    p.style.height = '6px'
+  }
+  else if (data[i].fields.age < 20) {
+    p.style.width = '9px'
+    p.style.height = '9px'
+  }
+  else if (data[i].fields.age < 30) {
+    p.style.width = '12px'
+    p.style.height = '12px'
+  }
+  else if (data[i].fields.age < 40) {
+    p.style.width = '15px'
+    p.style.height = '15px'
+  }
+  else if (data[i].fields.age === undefined) {
+    p.style.width = '18px'
+    p.style.height = '18px'
   }
 })
